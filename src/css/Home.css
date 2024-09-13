@@ -1,0 +1,232 @@
+.Home-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 0; /* Hoặc giá trị cụ thể nếu cần */
+  margin-right: 0; /* Hoặc giá trị cụ thể nếu cần */
+  overflow-x: hidden; /* Để ẩn phần tràn ra ngoài */
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0; /* Đảm bảo navbar cố định ở đầu trang */
+  left: 0; /* Đảm bảo navbar trải dài từ trái sang phải */
+  z-index: 999;
+  background-color: white;
+  border-bottom: 1px solid rgb(233, 233, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* width: 70%; */
+}
+
+.navbar ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+/* .navbar ul li a:hover {
+  background-color: rgb(201, 201, 201);
+  padding: 8px 16px;
+} */
+/* Thêm CSS cho Dropdown */
+.navbar ul li.relative .dropdown-content {
+  display: none; /* Ẩn dropdown ban đầu */
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.navbar ul li.relative:hover .dropdown-content {
+  display: block; /* Hiển thị dropdown khi hover */
+}
+
+/* Đảm bảo các mục dropdown không bị hiển thị trên PC trước khi hover */
+@media (min-width: 768px) {
+  .nav-links.open .dropdown-content {
+    display: none !important;
+  }
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.logo {
+  /* display: none; */
+  display: flex;
+  /* position: absolute; */
+  margin-right: 100px;
+  width: 55px;
+  height: 50px;
+}
+.menu-icon__line {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+}
+.navbar .li-login a {
+  background-color: rgb(32, 198, 32);
+  padding: 10px 16px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* .navbar .li-login a:hover {
+  background-color: #0676ee;
+  padding: 10px 16px;
+} */
+.menu-icon__line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon__line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon__line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  flex-direction: row;
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  width: 100%;
+  z-index: 998;
+  /* height: 100vh; */
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 10px 0;
+}
+
+.Home-container .banner-video {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  /* margin-top: 60px; */
+}
+
+.Home-container .banner-video .introduce-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 15%;
+  top: 100px;
+  width: 30%;
+}
+
+.Home-container .banner-video .introduce-container .startButton {
+  background-color: #0676ee;
+  cursor: pointer;
+  z-index: 1;
+  width: 140px;
+  padding: 15px 0px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+.Home-container .banner-video .introduce-container .startButton:hover {
+  background-color: #4c90d8;
+}
+h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  z-index: 1;
+}
+p {
+  margin-bottom: 25px;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+    position: absolute;
+    right: 70px;
+  }
+  .logo {
+    display: flex;
+    position: absolute;
+    left: 45px;
+    width: 50px;
+    height: 50px;
+  }
+  .navbar ul {
+    display: none;
+  }
+
+  .Home-container .banner-video {
+    flex-direction: column;
+  }
+
+  .Home-container .banner-video video {
+    order: 2; /* Đặt video sau phần giới thiệu */
+    width: 100%;
+  }
+
+  .Home-container .banner-video .introduce-container {
+    order: 1; /* Đặt phần giới thiệu lên trước video */
+    width: 50%;
+    /* padding: 20px; */
+    top: 20px;
+    left: 10px;
+  }
+  .Home-container .banner-video .introduce-container h1 {
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+  }
+  .Home-container .banner-video .introduce-container p {
+    /* display: none; */
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  .Home-container .banner-video .introduce-container .startButton {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+}
